@@ -72,13 +72,13 @@ export class Link extends React.Component {
     }
 
     render() {
-        const { to } = this.props;
+        const { to, ...props } = this.props;
         console.log(123, this.props)
         return (
             <Consumer>
                 {({ pathChange }) => (
                     <a
-                        {...this.props}
+                        {...props}
                         onClick={(e) => {
                             e.preventDefault();
                             window.history.pushState(null, '', to)
